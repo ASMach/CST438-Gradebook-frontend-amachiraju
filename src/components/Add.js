@@ -13,6 +13,7 @@ import Button from "@mui/material/Button";
 class Add extends React.Component {
   constructor(props) {
     super(props);
+    this.state = { name: "", duedate: "", course: "" };
   }
 
   render() {
@@ -23,7 +24,7 @@ class Add extends React.Component {
           to={{ pathname: "/", assignment: assignmentSelected }}
           variant="outlined"
           color="primary"
-          disabled={this.state.assignments.length === 0}
+          disabled={this.state.name == "" || this.state.course == ""}
           style={{ margin: 10 }}
         >
           Add
