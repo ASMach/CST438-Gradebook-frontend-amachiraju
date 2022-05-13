@@ -8,6 +8,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { Link } from "react-router-dom";
 import Cookies from "js-cookie";
 import Button from "@mui/material/Button";
+import TextField from "@mui/material";
 import { SERVER_URL } from "../constants.js";
 
 class Add extends React.Component {
@@ -21,7 +22,7 @@ class Add extends React.Component {
       <div align="left">
         <Button
           component={Link}
-          to={{ pathname: "/", assignment: assignmentSelected }}
+          to={{ pathname: "/" }}
           variant="outlined"
           color="primary"
           disabled={this.state.name == "" || this.state.course == ""}
