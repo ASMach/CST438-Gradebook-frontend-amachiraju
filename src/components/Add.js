@@ -16,23 +16,23 @@ class Add extends React.Component {
     this.state = { name: "", duedate: "", course: "" };
   }
 
-  changeName(e) {
+  changeName = (e) => {
     this.setState({
       name: e.target.value,
     });
-  }
+  };
 
-  changeDueDate(e) {
+  changeDueDate = (e) => {
     this.setState({
       duedate: e.target.value,
     });
-  }
+  };
 
-  changeCourse(e) {
+  changeCourse = (e) => {
     this.setState({
       course: e.target.value,
     });
-  }
+  };
 
   render() {
     return (
