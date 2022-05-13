@@ -16,19 +16,52 @@ class Add extends React.Component {
     this.state = { name: "", duedate: "", course: "" };
   }
 
+  changeName(e) {
+    this.setState({
+      name: e.target.value,
+    });
+  }
+
+  changeDueDate(e) {
+    this.setState({
+      duedate: e.target.value,
+    });
+  }
+
+  changeCourse(e) {
+    this.setState({
+      course: e.target.value,
+    });
+  }
+
   render() {
     return (
       <div align="left">
         <div>
           <div>
-            <TextField id="name" label="Name" variant="standard" />
+            <TextField
+              id="name"
+              label="Name"
+              variant="standard"
+              onChange={this.changeName}
+            />
           </div>
           <div>
             {" "}
-            <TextField id="duedate" label="Due Date" variant="standard" />
+            <TextField
+              id="duedate"
+              label="Due Date"
+              variant="standard"
+              onChange={this.changeDueDate}
+            />
           </div>
           <div>
-            <TextField id="course" label="Course" variant="standard" />
+            <TextField
+              id="course"
+              label="Course"
+              variant="standard"
+              onChange={this.changeCourse}
+            />
           </div>
         </div>
         <Button
