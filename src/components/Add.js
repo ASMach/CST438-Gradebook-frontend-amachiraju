@@ -34,6 +34,12 @@ class Add extends React.Component {
     });
   };
 
+  createAssignment = (e) => {
+    const { name, dueDate, couse } = this.state;
+
+    // TODO: Post the destructured props to localhost:8081/gradebook/{id}
+  };
+
   render() {
     return (
       <div align="left">
@@ -66,6 +72,7 @@ class Add extends React.Component {
         </div>
         <Button
           component={Link}
+          onClick={createAssignment}
           to={{ pathname: "/" }}
           variant="outlined"
           color="primary"
