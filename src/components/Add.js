@@ -110,6 +110,7 @@ class Add extends React.Component {
         >
           Add
         </Button>
+        <ToastContainer autoClose={1500} />
       </div>
     );
   }
