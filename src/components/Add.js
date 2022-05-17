@@ -35,7 +35,7 @@ class Add extends React.Component {
   };
 
   createAssignment = (e) => {
-    const { name, dueDate, couse } = this.state;
+    const { name, dueDate, course } = this.state;
 
     const token = Cookies.get("xsrf-token");
 
@@ -68,6 +68,8 @@ class Add extends React.Component {
   };
 
   render() {
+    const { name, dueDate, course } = this.state;
+
     return (
       <div align="left">
         <div>
@@ -103,7 +105,7 @@ class Add extends React.Component {
           to={{ pathname: "/" }}
           variant="outlined"
           color="primary"
-          disabled={this.state.name == "" || this.state.course == ""}
+          disabled={name == "" || course == ""}
           style={{ margin: 10 }}
         >
           Add
