@@ -101,7 +101,7 @@ class Add extends React.Component {
         </div>
         <Button
           component={Link}
-          onClick={createAssignment}
+          onClick={this.createAssignment}
           to={{ pathname: "/" }}
           variant="outlined"
           color="primary"
