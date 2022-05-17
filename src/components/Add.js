@@ -37,7 +37,34 @@ class Add extends React.Component {
   createAssignment = (e) => {
     const { name, dueDate, couse } = this.state;
 
-    // TODO: Post the destructured props to localhost:8081/gradebook/{id}
+    const token = Cookies.get("xsrf-token");
+
+    fetch(`${SERVER_URL}/gradebook/`, {
+      method: "post",
+      headers: {
+        "content-type": "application/json",
+        "x-xsrf-token": token,
+      },
+      body: JSON.stringify(this.state),
+    })
+      .then((res) => {
+        if (res.ok) {
+          toast.success("assignment successfully added", {
+            position: toast.position.bottom_left,
+          });
+        } else {
+          toast.error("error adding assignment", {
+            position: toast.position.bottom_left,
+          });
+          console.error("post http status =" + res.status);
+        }
+      })
+      .catch((err) => {
+        toast.error("error", {
+          position: toast.position.bottom_left,
+        });
+        console.error(err);
+      });
   };
 
   render() {
