@@ -32,8 +32,10 @@ class Assignment extends React.Component {
       .then((response) => response.json())
       .then((responseData) => {
         if (Array.isArray(responseData.assignments)) {
+          //  add to each assignment an "id"  This is required by DataGrid  "id" is the row index in the data grid table
           this.setState({
             assignments: responseData.assignments.map((assignment, index) => ({
+              id: index,
               ...assignment,
             })),
           });
