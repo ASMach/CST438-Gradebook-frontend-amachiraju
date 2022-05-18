@@ -45,7 +45,12 @@ class Assignment extends React.Component {
           });
         }
       })
-      .catch((err) => console.error(err));
+      .catch((err) => {
+        toast.error("Unspecified Error", {
+          position: toast.POSITION.BOTTOM_LEFT,
+        });
+        console.error(err);
+      });
   };
 
   onRadioClick = (event) => {
